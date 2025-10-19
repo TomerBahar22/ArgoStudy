@@ -3,8 +3,8 @@ kind: Deployment
 metadata:
   name: guestbook-ui
 spec:
-  replicas: {{ Values.replicas }}
-  revisionHistoryLimit: {{ Values.revisionHistoryLimit }}
+  replicas: {{ .Values.replicas }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   selector:
     matchLabels:
       app: guestbook-ui
@@ -14,7 +14,7 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-        - image: {{ Values.containers.image }}
+        - image: {{ .Values.containers.image }}
           name: guestbook-ui
           ports:
-            - containerPort: {{ Values.containerPort }}
+            - containerPort: {{ .Values.containerPort }}
