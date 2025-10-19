@@ -11,6 +11,6 @@ spec:
     targetRevision: 1.16.1
     helm:
       releaseName: guestbook
-destination:
-    server: "https://kubernetes.default.svc"
-    namespace: default
+  destination:
+      server: "https://kubernetes.default.svc"
+      namespace: default
