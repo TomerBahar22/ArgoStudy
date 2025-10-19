@@ -3,9 +3,11 @@ kind: Service
 metadata:
   name: guestbook-ui
 spec:
-  ports:
-  - port: {{ .Values.ports.port }}
-    targetPort: {{ .Values.ports.targetPort }}
-    type: {{ .Values.ports.type }}
+  type: {{ .Values.service.type }}
   selector:
     app: guestbook-ui
+  ports:
+    - name: http
+      port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
