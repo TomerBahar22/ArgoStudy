@@ -5,8 +5,7 @@ containers:
 
 containerPort: 80
 
-ports:  
+service:
+  type: LoadBalancer
   port: 80
   targetPort: 80
-  type: LoadBalancer
-
