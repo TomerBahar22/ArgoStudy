@@ -4,7 +4,8 @@ metadata:
   name: guestbook-ui
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+  - port: {{ Values.ports.port }}
+    targetPort: {{ Values.ports.targetPort }}
+    type: {{ Values.ports.type }}
   selector:
     app: guestbook-ui
